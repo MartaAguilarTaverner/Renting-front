@@ -1,17 +1,18 @@
+import { Outlet } from "react-router-dom";
+
 import "./App.css";
 
-import Movie from "./Movie";
-import Serie from "./Serie";
-import User from "./User";
-import UserOrder from "./UserOrder";
+import MenuBar from "./components/MenuBar";
 
 function App() {
     return (
         <div className="App">
-            <Movie />
-            <Serie />
-            <User />
-            <UserOrder />
+            <div className="app-header">
+                <MenuBar />
+            </div>
+            <div className="app-container">
+                <Outlet />
+            </div>
         </div>
     );
 }
