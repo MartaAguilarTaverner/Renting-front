@@ -1,11 +1,8 @@
 import { Outlet } from "react-router-dom";
 
-import "./App.css";
-
 import MenuBar from "./components/MenuBar";
-import Carousel from "./components/Carousel";
 
-
+import "./App.css";
 
 function App() {
     return (
@@ -14,7 +11,6 @@ function App() {
                 <MenuBar />
             </div>
             <div className="app-container">
-                <Carousel />
                 <Outlet />
             </div>
         </div>
