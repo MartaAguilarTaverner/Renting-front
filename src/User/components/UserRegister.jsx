@@ -1,14 +1,11 @@
 import { useState } from "react";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
-import { Form, Field } from "react-final-form";
 import { Calendar } from "primereact/calendar";
 import { Password } from "primereact/password";
 import { Checkbox } from "primereact/checkbox";
 import { Dialog } from "primereact/dialog";
 import { Divider } from "primereact/divider";
-import { classNames } from "primereact/utils";
-
 
 // const checkEmailRegexp = (email) =>
 //     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
@@ -29,8 +26,10 @@ import { classNames } from "primereact/utils";
 const UserRegister = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [name, setName] = useState("");   
-    const [dateBirth, setDateBirth] = useState(""); 
+    const [name, setName] = useState("");
+    const [dateBirth, setDateBirth] = useState("");
+
+    const onSubmit = () => {};
 
     return (
         <div className="flex justify-content-center align-items-center">
@@ -86,7 +85,6 @@ const UserRegister = () => {
                 </div>
             </div>
         </div>
-
     );
 };
 
