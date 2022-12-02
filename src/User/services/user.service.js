@@ -5,3 +5,11 @@ export const doLogin = ({ email, password }) =>
         email,
         password,
     });
+
+export const doRegister = ({ email, password, dateBirth, name }) =>
+    axios.put("http://localhost:3001/user/register", {
+        email,
+        name,
+        password,
+        dateBirth
+    });
