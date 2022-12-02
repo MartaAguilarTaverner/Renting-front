@@ -11,8 +11,10 @@ import Register from "./User/Register";
 import Movie from "./Movie";
 import Serie from "./Serie";
 import UserOrder from "./UserOrder";
+import Admin from "./User/Admin/Admin";
 
 import PrivateRoute from "./components/PrivateRoute";
+import AdminRoute from "./components/AdminRoute";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -25,6 +27,9 @@ const router = createBrowserRouter(
                     <Route path="/movies" element={<Movie />} />
                     <Route path="/series" element={<Serie />} />
                     <Route path="/userorders" element={<UserOrder />} />
+                </Route>
+                <Route element={<AdminRoute />}>
+                    <Route path="/administration" element={<Admin />} />
                 </Route>
             </Route>
         </>

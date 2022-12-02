@@ -100,7 +100,8 @@ const MenuBar = () => {
         {
             label: "Administration",
             icon: "pi pi-fw pi-sitemap",
-            visible: isAdmin,
+            visible: isAdmin && token !== "",
+            command: () => navigate("/administration"),
         },
     ];
 
