@@ -1,25 +1,25 @@
-import 'primeicons/primeicons.css';
-import 'primereact/resources/themes/lara-light-indigo/theme.css';
-import 'primereact/resources/primereact.css';
-import 'primeflex/primeflex.css';
-import '../../index.css';
-import ReactDOM from 'react-dom';
+// import 'primeicons/primeicons.css';
+// import 'primereact/resources/themes/lara-light-indigo/theme.css';
+// import 'primereact/resources/primereact.css';
+// import 'primeflex/primeflex.css';
+// import '../../index.css';
+// import ReactDOM from 'react-dom';
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Dropdown } from 'primereact/dropdown';
-import { Skeleton } from 'primereact/skeleton';
-import './DropdownDemo.css';
+// import { Skeleton } from 'primereact/skeleton';
+// import './DropdownDemo.css';
 
 const DropdownDemo = () => {
 
     const [lazyItems, setLazyItems] = useState([]);
     const [lazyLoading, setLazyLoading] = useState(false);
-    const [selectedCity1, setSelectedCity1] = useState(null);
+    const [selectedPlan, setSelectedPlan] = useState(null);
 
 
     let loadLazyTimeout = useRef(null);
 
-    const cities = [
+    const plans = [
         { name: 'Premium', code: 'NY' },
         { name: 'Free', code: 'RM' },
     ];
@@ -30,7 +30,7 @@ const DropdownDemo = () => {
     },[]); // eslint-disable-line react-hooks/exhaustive-deps
 
     const onCityChange = (e) => {
-        setSelectedCity1(e.value);
+        setSelectedPlan(e.value);
     }
 
     const onLazyLoad = (event) => {
@@ -70,12 +70,13 @@ const DropdownDemo = () => {
             </span>
         );
     }
+//////////////////////////////////////////////////////////////////////
 
     return (
         <div className="dropdown-demo">
             <div className="card">
                 <h5>Basic</h5>
-                <Dropdown value={selectedCity1} options={cities} onChange={onCityChange} optionLabel="name" placeholder="Select a City" />
+                <Dropdown value={selectedPlan} options={plans} onChange={onCityChange} optionLabel="name" placeholder="Select a plan" />
 
             </div>
         </div>
