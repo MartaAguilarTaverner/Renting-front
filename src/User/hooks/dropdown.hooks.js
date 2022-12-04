@@ -10,7 +10,7 @@ import { Dropdown } from 'primereact/dropdown';
 // import { Skeleton } from 'primereact/skeleton';
 // import './DropdownDemo.css';
 
-const DropdownDemo = () => {
+export const DropdownDemo = () => {
 
     const [lazyItems, setLazyItems] = useState([]);
     const [lazyLoading, setLazyLoading] = useState(false);
@@ -70,7 +70,6 @@ const DropdownDemo = () => {
             </span>
         );
     }
-//////////////////////////////////////////////////////////////////////
 
     return (
         <div className="dropdown-demo">
@@ -83,5 +82,5 @@ const DropdownDemo = () => {
     );
 }
                 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<DropdownDemo />, rootElement);
+// const rootElement = document.getElementById("root");
+// ReactDOM.render(<DropdownDemo />, rootElement);
