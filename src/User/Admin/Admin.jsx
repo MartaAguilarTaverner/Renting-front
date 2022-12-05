@@ -1,8 +1,6 @@
 import { useState } from "react";
 
 import AdminMenu from "./components/AdminMenu";
-import AdminMovies from "./components/AdminMovies";
-import AdminSeries from "./components/AdminSeries";
 import AdminUsers from "./components/AdminUsers";
 import AdminUserOrders from "./components/AdminUserOrders";
 
@@ -20,8 +18,6 @@ const Admin = () => {
             <div className="admin-content p-4">
                 {activeIndex === 0 && <AdminUsers />}
                 {activeIndex === 1 && <AdminUserOrders />}
-                {activeIndex === 2 && <AdminMovies />}
-                {activeIndex === 3 && <AdminSeries />}
             </div>
         </>
     );

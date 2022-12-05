@@ -11,5 +11,12 @@ export const doRegister = ({ email, password, dateBirth, name }) =>
         email,
         name,
         password,
-        dateBirth
+        dateBirth,
+    });
+
+export const getAllUsers = (token) =>
+    axios.get("http://localhost:3001/user", {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
     });
