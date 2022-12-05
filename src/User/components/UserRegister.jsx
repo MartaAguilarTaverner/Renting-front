@@ -6,6 +6,7 @@ import { Password } from "primereact/password";
 import { Checkbox } from "primereact/checkbox";
 import { Dialog } from "primereact/dialog";
 import { Divider } from "primereact/divider";
+import { CalendarDemo } from "../hooks/calendar.hooks"
 
 // const checkEmailRegexp = (email) =>
 //     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
@@ -28,6 +29,8 @@ const UserRegister = () => {
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
     const [dateBirth, setDateBirth] = useState("");
+    const { onSubmitCalendar } = CalendarDemo();
+
 
     const onSubmit = () => {};
 
@@ -66,7 +69,8 @@ const UserRegister = () => {
                         <label htmlFor="password">Password</label>
                     </span>
                 </div>
-                <div className="field">
+                
+                {/* <div className="field">
                     <span className="p-float-label">
                         <InputText
                             id="dateBirth"
@@ -75,6 +79,13 @@ const UserRegister = () => {
                         />
                         <label htmlFor="dateBirth">Birth date</label>
                     </span>
+                </div> */}
+
+                <div className="p-fluid grid formgrid">
+                    <div className="field col-12 md:col-4">
+                        <label htmlFor="basic">Basic</label>
+                        <Calendar onChange={(e) => onSubmitCalendar(e.value)} />
+                    </div>
                 </div>
                 <div className="field flex justify-content-center">
                     <Button
