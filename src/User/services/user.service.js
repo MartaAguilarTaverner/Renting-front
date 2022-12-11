@@ -6,12 +6,19 @@ export const doLogin = ({ email, password }) =>
         password,
     });
 
-export const doRegister = ({ email, password, dateBirth, name }) =>
+export const doRegister = ({
+    name,
+    email,
+    password,
+    dateBirth,
+    subscription,
+}) =>
     axios.put("http://localhost:3001/user/register", {
-        email,
         name,
+        email,
         password,
         dateBirth,
+        subscription,
     });
 
 export const getAllUsers = (token) =>

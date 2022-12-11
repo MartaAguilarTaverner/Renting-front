@@ -5,14 +5,13 @@ import { Calendar } from "primereact/calendar";
 import { Password } from "primereact/password";
 import { Checkbox } from "primereact/checkbox";
 import { Dropdown } from "primereact/dropdown";
-//import { throwUnexpectedConfigError } from "@craco/craco";
 
 export const FormRegister = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [birthDate, setBirthDate] = useState(new Date());
-    const [subscriptionOptions, setSubscriptionOptions] = useState([
+    const [subscriptionOptions] = useState([
         {
             label: "Try Free 1 month",
             value: "try",

@@ -1,0 +1,13 @@
+
+.mediaCarousel{
+    background-color: rgb(19, 19, 19);
+    margin: 5em;
+    width: 95%;
+
+}
+
+.movie{
+    height: 50vh;
+    padding:0.5rem,
+}
+

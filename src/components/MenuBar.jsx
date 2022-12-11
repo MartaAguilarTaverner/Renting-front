@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Menubar } from "primereact/menubar";
 import { useSelector } from "react-redux";
 
+import "./MenuBar.css";
 const MenuBar = () => {
     const navigate = useNavigate();
     const token = useSelector((state) => state.user.token);
@@ -55,18 +56,6 @@ const MenuBar = () => {
                     label: "TopMovies",
                     icon: "pi pi-fw pi-check",
                 },
-                {
-                    label: "Genres",
-                    icon: "pi pi-fw pi-ellipsis-h",
-                },
-                {
-                    label: "Year",
-                    icon: "pi pi-fw pi-ellipsis-h",
-                },
-                {
-                    label: "Directors",
-                    icon: "pi pi-fw pi-ellipsis-h",
-                },
             ],
         },
         {
@@ -83,18 +72,6 @@ const MenuBar = () => {
                     label: "TopSeries",
                     icon: "pi pi-fw pi-check",
                 },
-                {
-                    label: "Genres",
-                    icon: "pi pi-fw pi-ellipsis-h",
-                },
-                {
-                    label: "Year",
-                    icon: "pi pi-fw pi-ellipsis-h",
-                },
-                {
-                    label: "Directors",
-                    icon: "pi pi-fw pi-ellipsis-h",
-                },
             ],
         },
         {
@@ -105,7 +82,11 @@ const MenuBar = () => {
         },
     ];
 
-    return <Menubar model={items} />;
+    const start = (
+        <img src="logo-modified.png" alt="logo" className="mr-2 logo" />
+    );
+
+    return <Menubar className="menubar" model={items} start={start} />;
 };
 
 export default MenuBar;

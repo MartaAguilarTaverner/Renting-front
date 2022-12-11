@@ -1,7 +1,11 @@
 import { useEffect, useState, useCallback } from "react";
 import { useSelector } from "react-redux";
 
+import TableCardMedia from "../components/TableCardMedia/TableCardMedia";
+
 import { getMovieList } from "./services";
+
+import "./";
 
 const Movie = () => {
     const token = useSelector((state) => state.user.token);
@@ -18,15 +22,9 @@ const Movie = () => {
     }, [getAllMovies]);
 
     return (
-        <>
-            <div>This is Movies</div>
-            {movieList.map((movie) => (
-                <>
-                    <div>{movie.title}</div>
-                    <img src={movie.imgURL} width="150" alt={movie.title} />
-                </>
-            ))}
-        </>
+        <div className="page-movies-main">
+            <TableCardMedia mediaList={movieList} />
+        </div>
     );
 };
 

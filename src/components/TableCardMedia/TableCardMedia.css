@@ -1,0 +1,42 @@
+.card {
+    background-color: rgb(51, 51, 51);
+
+}
+
+.media-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(51, 51, 51);
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    
+}
+
+
+.header-mediatable{
+    border-radius: 2%;
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgb(51, 51, 51);
+}
+
+.p-dataview .p-dataview-header{
+    background-color: rgb(51, 51, 51)!important;
+}
+
+.media-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mediaimg{
+    height: 50vh;
+    width: auto;
+} 
+
+
+
+
