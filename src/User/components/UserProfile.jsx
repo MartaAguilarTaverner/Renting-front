@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import { Chips } from 'primereact/chips';
@@ -42,8 +43,7 @@ const InnerProfile = () => {
         );
 
         const body= (
-            InnerProfile(),
-        );
+            InnerProfile());
 
         const footer = (
             <span>
