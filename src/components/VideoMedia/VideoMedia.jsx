@@ -14,13 +14,13 @@ const FieldVideoMedia = () => {
                     <div><h5>Year</h5> <h5>Director</h5> <h5>Genre</h5> <h5>MinAge</h5> <h5>Rating</h5></div>
                 </Fieldset>
                 <Card title="" className="video-view">
-                    <Button/>
+                    <Button icon="pi pi-play" />
                     <ProgressSpinner />
                 </Card>
             </div>
         </div>
     )
-}
+};
     
 export default FieldVideoMedia;
 
