@@ -18,6 +18,14 @@ const reducers = {
         state.subscribed = action.payload.subscribed;
         state.token = action.payload.token;
     },
+    logout: (state) => {
+        state.id = 0;
+        state.email = "";
+        state.name = "";
+        state.isAdmin = false;
+        state.subscribed = false;
+        state.token = "";
+    },
 };
 
 export const userSlice = createSlice({
@@ -26,6 +34,6 @@ export const userSlice = createSlice({
     reducers,
 });
 
-export const { login } = userSlice.actions;
+export const { login, logout } = userSlice.actions;
 
 export default userSlice.reducer;

@@ -1,5 +1,5 @@
-const Home = () => (
-    <img alt="" src="front_home.jpg" className="home-wallpaper" />
-);
+import "./Home.css";
+
+const Home = () => <div className="home-background"></div>;
 
 export default Home;

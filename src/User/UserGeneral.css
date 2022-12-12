@@ -1,0 +1,38 @@
+/* User Login Component and View */
+
+.login-container{
+    background-image: url("/public/front_home.jpg");
+    height: 100%;
+}
+
+.login-form{
+    background-color: black;
+    border-radius: 8%;
+    padding: 1rem;
+}
+
+.login-text{
+    color: rgb(238, 254, 254) !important;
+    font-size: large;
+    font-weight:bolder;
+}
+
+
+/* User Register Component and view */
+
+.register-container{
+    background-image: url("/public/front_home.jpg");
+    height: 100%;
+}
+
+.register-form{
+    background-color: black;
+    border-radius: 8%;
+    padding: 1rem;
+}
+
+.register-text{
+    color: white !important;
+    font-size: large;
+    font-weight: bolder;
+}

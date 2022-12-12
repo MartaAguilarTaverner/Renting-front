@@ -3,3 +3,7 @@
   width: 100vw;
   background-color: rgb(8, 8, 8);
 }
+
+.app-container{
+  height: 90%;
+}

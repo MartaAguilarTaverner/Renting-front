@@ -1,12 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import { Menubar } from "primereact/menubar";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
+import { logout } from "../../User/store/user.store";
 
 import "./MenuBar.css";
+
 const MenuBar = () => {
     const navigate = useNavigate();
     const token = useSelector((state) => state.user.token);
     const isAdmin = useSelector((state) => state.user.isAdmin);
+    const dispatch = useDispatch();
 
     const items = [
         {
@@ -34,6 +38,10 @@ const MenuBar = () => {
                     label: "Logout",
                     icon: "pi pi-fw pi-sign-out",
                     visible: token !== "",
+                    command: () => {
+                        dispatch(logout());
+                        navigate("/login");
+                    },
                 },
                 {
                     label: "Profile",
@@ -55,6 +63,7 @@ const MenuBar = () => {
                 {
                     label: "TopMovies",
                     icon: "pi pi-fw pi-check",
+                    command: () => navigate("/topmovies"),
                 },
             ],
         },
@@ -71,6 +80,7 @@ const MenuBar = () => {
                 {
                     label: "TopSeries",
                     icon: "pi pi-fw pi-check",
+                    command: () => navigate("/topseries"),
                 },
             ],
         },

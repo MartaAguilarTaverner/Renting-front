@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { Column } from "primereact/column";
 import { InputText } from "primereact/inputtext";
 import { DataTable } from "primereact/datatable";
+import { Button } from "primereact/button";
 
 import { getAllUsers } from "../../services";
 import { useSelector } from "react-redux";
@@ -9,18 +10,21 @@ import { useSelector } from "react-redux";
 const AdminUsers = () => {
     const token = useSelector((state) => state.user.token);
     const [users, setUsers] = useState([]);
-    const [selectedUsers, setSelectedUsers] = useState(null);
     const [globalFilter, setGlobalFilter] = useState(null);
 
-    const getAllUsers = useCallback(async () => {
+    const getUserList = useCallback(async () => {
         const result = await getAllUsers(token);
+        console.log(
+            "🚀 ~ file: AdminUsers.jsx:16 ~ getUserList ~ result",
+            result
+        );
 
-        getAllUsers(result.data);
+        setUsers(result.data);
     }, [token]);
 
     useEffect(() => {
-        getAllUsers();
-    }, [getAllUsers]);
+        getUserList();
+    }, [getUserList]);
 
     const header = (
         <div className="table-header">
@@ -36,15 +40,24 @@ const AdminUsers = () => {
         </div>
     );
 
-    const actionBodyTemplate = {};
+    const actionBodyTemplate = (rowData) => (
+        <>
+            <Button
+                icon="pi pi-pencil"
+                className="p-button-rounded p-button-success mr-2"
+            />
+            <Button
+                icon="pi pi-trash"
+                className="p-button-rounded p-button-warning"
+            />
+        </>
+    );
 
     return (
         <div className="datatable-crud-demo">
             <div className="card">
                 <DataTable
                     value={users}
-                    selection={selectedUsers}
-                    onSelectionChange={(e) => setSelectedUsers(e.value)}
                     dataKey="id"
                     paginator
                     rows={10}
@@ -52,7 +65,6 @@ const AdminUsers = () => {
                     paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
                     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
                     globalFilter={globalFilter}
-                    header={header}
                     responsiveLayout="scroll"
                 >
                     <Column
@@ -92,9 +104,9 @@ const AdminUsers = () => {
                     ></Column>
                     <Column
                         header="Actions"
-                        body={actionBodyTemplate}
                         exportable={false}
                         style={{ minWidth: "8rem" }}
+                        body={actionBodyTemplate}
                     ></Column>
                 </DataTable>
             </div>

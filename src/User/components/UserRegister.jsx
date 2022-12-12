@@ -6,6 +6,7 @@ import { Password } from "primereact/password";
 import { Checkbox } from "primereact/checkbox";
 import { Dropdown } from "primereact/dropdown";
 
+import "../UserGeneral.css";
 export const FormRegister = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -29,80 +30,85 @@ export const FormRegister = () => {
     const [accept, setAccept] = useState();
 
     return (
-        <div className="flex justify-content-center">
-            <div className="card">
-                <h5 className="text-center">Register</h5>
-                <form className="p-fluid">
-                    <div className="field">
-                        <span className="p-float-label">
-                            <InputText
-                                id="name"
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                            />
-                            <label htmlFor="name">name</label>
-                        </span>
-                    </div>
-                    <div className="field">
-                        <span className="p-float-label p-input-icon-right">
-                            <i className="pi pi-envelope" />
-                            <InputText
-                                id="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                            <label htmlFor="email">Email</label>
-                        </span>
-                    </div>
-                    <div className="field">
-                        <span className="p-float-label">
-                            <Password
-                                id="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                            <label htmlFor="password">Password*</label>
-                        </span>
-                    </div>
-                    <div className="field">
-                        <span className="p-float-label">
-                            <Calendar
-                                id="birthDate"
-                                value={birthDate}
-                                onChange={(e) => setBirthDate(e.target.value)}
-                                dateFormat="dd/mm/yy"
-                                mask="99/99/9999"
-                                showIcon
-                            />
-                            <label htmlFor="date">Birthday</label>
-                        </span>
-                    </div>
-                    <div className="subscription">
-                        <span className="p-float-label">
-                            <Dropdown
-                                id="subscription"
-                                value={subscription}
-                                onChange={(e) => setSubscription(e.value)}
-                                options={subscriptionOptions}
-                            />
-                            <label htmlFor="subscription">
-                                Select Subscription Plan
-                            </label>
-                        </span>
-                    </div>
-                    <div className="field-checkbox">
-                        <Checkbox
-                            inputId="accept"
-                            name="accept"
-                            checked={accept}
-                            onChange={(e) => setAccept(e.checked)}
+        <div className="flex justify-content-center align-items-center register-container">
+            <div className="card register-form">
+                <h5 className="text-center register-text">Register</h5>
+                <div className="field">
+                    <span className="p-float-label w-full">
+                        <InputText
+                            id="name"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            className="w-full"
                         />
-                        <label htmlFor="accept">
-                            I agree to the terms and conditions*
+                        <label htmlFor="name">name</label>
+                    </span>
+                </div>
+                <div className="field mt-4">
+                    <span className="p-float-label p-input-icon-right w-full">
+                        <i className="pi pi-envelope" />
+                        <InputText
+                            id="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            className="w-full"
+                        />
+                        <label htmlFor="email">Email</label>
+                    </span>
+                </div>
+                <div className="field mt-4 w-full">
+                    <span className="p-float-label w-full">
+                        <Password
+                            id="password"
+                            className="w-full"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <label htmlFor="password">Password*</label>
+                    </span>
+                </div>
+                <div className="field mt-4">
+                    <span className="p-float-label w-full">
+                        <Calendar
+                            id="birthDate"
+                            className="w-full"
+                            value={birthDate}
+                            onChange={(e) => setBirthDate(e.target.value)}
+                            dateFormat="dd/mm/yy"
+                            mask="99/99/9999"
+                            showIcon
+                        />
+                        <label htmlFor="date">Birthday</label>
+                    </span>
+                </div>
+                <div className="subscription mt-4">
+                    <span className="p-float-label w-full">
+                        <Dropdown
+                            id="subscription"
+                            className="w-full"
+                            value={subscription}
+                            onChange={(e) => setSubscription(e.value)}
+                            options={subscriptionOptions}
+                        />
+                        <label htmlFor="subscription">
+                            Select Subscription Plan
                         </label>
-                    </div>
-                    <Button type="submit" label="Submit" className="mt-2" />
-                </form>
+                    </span>
+                </div>
+                <div className="field-checkbox mt-2">
+                    <Checkbox
+                        inputId="accept"
+                        name="accept"
+                        checked={accept}
+                        onChange={(e) => setAccept(e.checked)}
+                    />
+                    <label htmlFor="accept">
+                        I agree to the terms and conditions*
+                    </label>
+                </div>
+                <div className="field flex justify-content-center">
+                    <Button label="Submit" className="mt-2" />
+                </div>
             </div>
         </div>
     );
