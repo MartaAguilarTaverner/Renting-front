@@ -23,7 +23,7 @@ const Movie = () => {
 
     return (
         <div className="page-movies-main">
-            <TableCardMedia mediaList={movieList} />
+            <TableCardMedia mediaList={movieList} type="movies" />
         </div>
     );
 };

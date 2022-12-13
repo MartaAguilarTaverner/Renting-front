@@ -14,11 +14,6 @@ const AdminUsers = () => {
 
     const getUserList = useCallback(async () => {
         const result = await getAllUsers(token);
-        console.log(
-            "🚀 ~ file: AdminUsers.jsx:16 ~ getUserList ~ result",
-            result
-        );
-
         setUsers(result.data);
     }, [token]);
 

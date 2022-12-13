@@ -13,3 +13,10 @@ export const getTopSeries = (token) =>
             Authorization: `Bearer ${token}`,
         },
     });
+
+export const getSerieById = (token, id) =>
+    axios.get(`http://localhost:3001/serie/${id}`, {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    });

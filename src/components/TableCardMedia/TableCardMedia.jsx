@@ -4,6 +4,7 @@ import { Button } from "primereact/button";
 import { Rating } from "primereact/rating";
 
 import "./TableCardMedia.css";
+import { useNavigate } from "react-router-dom";
 
 const renderListItem = (data) => (
     <div className="col-12">
@@ -19,34 +20,12 @@ const renderListItem = (data) => (
     </div>
 );
 
-const renderGridItem = (data) => (
-    <div className="col-12 md:col-4">
-        <div className="media-grid-item card">
-            <div className="media-grid-item-content media-card">
-                <img src={data.imgURL} alt={data.name} className="mediaimg" />
-                <Rating
-                    value={data.rating}
-                    readOnly
-                    cancel={false}
-                    stars={10}
-                />
-            </div>
-            <div className="media-grid-item-bottom media-button">
-                <Button
-                    icon="pi pi-search"
-                    className="media-button"
-                    label="Info"
-                ></Button>
-            </div>
-        </div>
-    </div>
-);
-
-const TableCardMedia = ({ mediaList }) => {
+const TableCardMedia = ({ mediaList, type }) => {
     const [layout, setLayout] = useState("grid");
-    const [sortOrder, setSortOrder] = useState(null);
-    const [sortField, setSortField] = useState(null);
+    const [sortOrder] = useState(null);
+    const [sortField] = useState(null);
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     const itemTemplate = (media, layout) => {
         if (!media) {
@@ -61,6 +40,34 @@ const TableCardMedia = ({ mediaList }) => {
 
         return result;
     };
+
+    const renderGridItem = (data) => (
+        <div className="col-12 md:col-4">
+            <div className="media-grid-item card">
+                <div className="media-grid-item-content media-card">
+                    <img
+                        src={data.imgURL}
+                        alt={data.name}
+                        className="mediaimg"
+                    />
+                    <Rating
+                        value={data.rating}
+                        readOnly
+                        cancel={false}
+                        stars={10}
+                    />
+                </div>
+                <div className="media-grid-item-bottom media-button">
+                    <Button
+                        icon="pi pi-search"
+                        className="media-button"
+                        label="Info"
+                        onClick={() => navigate(`/${type}/${data.id}`)}
+                    ></Button>
+                </div>
+            </div>
+        </div>
+    );
 
     const renderHeader = () => {
         return (

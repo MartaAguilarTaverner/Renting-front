@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import TableCardMedia from "../components/TableCardMedia/TableCardMedia";
 
-import { getSerieList } from "../Service/serie.service";
+import { getSerieList } from "./services/serie.service";
 
 const Serie = () => {
     const token = useSelector((state) => state.user.token);
@@ -21,7 +21,7 @@ const Serie = () => {
 
     return (
         <div>
-            <TableCardMedia mediaList={serieList} />
+            <TableCardMedia mediaList={serieList} type="series" />
         </div>
     );
 };

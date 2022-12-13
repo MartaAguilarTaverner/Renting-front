@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import TableCardMedia from "../components/TableCardMedia/TableCardMedia";
 
-import { getTopSeries } from "../Service/serie.service";
+import { getTopSeries } from "./services/serie.service";
 
 const TopSerie = () => {
     const token = useSelector((state) => state.user.token);

@@ -47,6 +47,7 @@ const MenuBar = () => {
                     label: "Profile",
                     icon: "pi pi-fw pi-user",
                     visible: token !== "",
+                    command: () => navigate("/profile"),
                 },
             ],
         },
