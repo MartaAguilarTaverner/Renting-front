@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# CatCorn APP <img src="/img readme/logo-modified.png" width="40">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## Introduction
 
-In the project directory, you can run:
+CatCorn is a simulation of an app with a suscription available to watch series and movies. The back-end side is in this next repository:
+https://github.com/MartaAguilarTaverner/Tic-Tac-Toe-Proyecto-3.git
 
-### `npm start`
+You will be able to register and navigate in the options of the movies and series that you have in this app, with a rating and description of the media (genre, director, year...), even you have two views one with the top rating movies and the other with the top rating series. All responsive.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Two types of user, admin and normal, the navbar is modified to show the items depending in each situation, even when the user is not registered the navbar will not show the part of movies or series, and without being admin it will not show the administration part.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Tecnologies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**- CSS3**
+**- JavaScript**
+**- React**
+**- PrimeReact**
+**- PrimeFlex**
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Views of the App and Functionality
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `Before Login`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Before login or register you will be able to see the screen of home, that os simple, just a background with presentation of the films, and you will be able to access to the user part, and the screen of Login and register
 
-### `npm run eject`
+<center><img src="/img readme/Home.png" height="300"></center>
+<center><img src="/img readme/Register.png" width="300"> <img src="/img readme/Login.png" width="230"></center>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The part of login compare the data that the user puts with the data that is saved in the back, and if it's the same then you will be able to enter and see all the web, with the register part the data will be saved in the back and you will be able to login with your new user.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### `After Login`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+You will be able to see all the things that the app offers, movies and series, and you will have the new option in user of logout and profile, the others will disappear. You will have as well the movies with the option of movies and top movies, and series with the option of series and top series.
 
-## Learn More
+<center><img src="/img readme/moviesnavbar.png" width="200"> <img src="/img readme/seriesnavbar.png" width="135"> <img src="/img readme/userOption.png" width="200"></center>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+When you enter to movies you will have a view aof all the movies in the data base and with two options of view, in line(one for one all the movies in vertical) or the option of table with three in every column(in pc view in phone just one), you have a paginator in the final of each view to charge new movies in each page.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<center><img src="/img readme/movies lined.png" width="300"> <img src="/img readme/moviesscreen.png" width="290"></center>
+<center><img src="/img readme/paginator.png" width="300"></center>
 
-### Code Splitting
+Pressing the button info you will acces to a new page with all the info of that movie and with another buuton of watch that will register that in the data base to be able to see what user has accessed each movie, the same functionality in the series screen
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<center><img src="/img readme/description.png" width="700"></center>
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### `Admin Access`
 
-### Making a Progressive Web App
+The admin will be able to have acces to a new view of administration, which has a submenubar with two options user and userorders, and will be able to modify or delete the info of the users and the orders. This tables canbe ordered by email Datebirth, name... by putting it in an ascendent or descendent order, to make it easy for the user to access to the information that is searching faster and easier.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<center><img src="/img readme/adminscreen.png" width="900"> </center>
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## DB Structure
 
-### Deployment
+<center><img src="/img readme/DB.png" width="700"></center>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+#### Expecting new uploads and improvements in few parts of the project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+In the future I will like to improve the part of the admin with a search field, to improve the info view with a better style and another screen when the movie or serie can be watched, more info in the series part with all the episodes and be able to access each one, and improve the profile to be able to change few fields, and charge a profile pict and description.
