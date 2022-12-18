@@ -1,4 +1,4 @@
-# CatCorn APP <img src="/img readme/logo-modified.png" width="40">
+# CatCorn APP <img src="/img readme/logo-modified.png" width="50">
 
 ---
 
