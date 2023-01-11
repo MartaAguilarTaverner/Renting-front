@@ -1,19 +1,21 @@
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-import { doLogin } from "../services";
+import { doLogin } from '../services';
+import { doRegister } from '../services';
 
-import { login } from "../store/user.store";
+import { login } from '../store/user.store';
 
-import { checkIfDataIsValid } from "../../utils/datacheck.utils";
+import { checkIfDataIsValid } from '../../utils/datacheck.utils';
+import { checkIfRegisterDataIsValid } from '../../utils/datacheck.utils';
 
-export const useUserLoginHook = () => {
+export const useUserHook = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const onSubmitLogin = async (email, password) => {
         if (checkIfDataIsValid(email, password)) {
-            alert("The email or password is not correct");
+            alert('The email or password is not correct');
 
             return;
         }
@@ -28,9 +30,31 @@ export const useUserLoginHook = () => {
         if (result.data) {
             dispatch(login(result.data));
 
-            navigate("/");
+            navigate('/');
         }
     };
 
-    return { onSubmitLogin };
+    const onSubmitRegister = async (name, email, password, dateBirth, subscription) => {
+        if (!checkIfRegisterDataIsValid(name, email, password, dateBirth, subscription)) {
+            alert('Something went wrong while trying to register with this data');
+
+            return;
+        }
+
+        const registerData = {
+            name,
+            email,
+            password,
+            dateBirth,
+            subscription,
+        };
+
+        const result = await doRegister(registerData);
+
+        if (result.data) {
+            navigate('/login');
+        }
+    };
+
+    return { onSubmitLogin, onSubmitRegister };
 };

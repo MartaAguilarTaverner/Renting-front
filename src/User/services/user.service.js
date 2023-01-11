@@ -1,19 +1,13 @@
-import axios from "axios";
+import axios from 'axios';
 
 export const doLogin = ({ email, password }) =>
-    axios.post("http://localhost:3001/user/login", {
+    axios.post('http://localhost:3001/user/login', {
         email,
         password,
     });
 
-export const doRegister = ({
-    name,
-    email,
-    password,
-    dateBirth,
-    subscription,
-}) =>
-    axios.put("http://localhost:3001/user/register", {
+export const doRegister = ({ name, email, password, dateBirth, subscription }) =>
+    axios.post('http://localhost:3001/user/register', {
         name,
         email,
         password,
@@ -22,7 +16,7 @@ export const doRegister = ({
     });
 
 export const getAllUsers = (token) =>
-    axios.get("http://localhost:3001/user", {
+    axios.get('http://localhost:3001/user', {
         headers: {
             Authorization: `Bearer ${token}`,
         },

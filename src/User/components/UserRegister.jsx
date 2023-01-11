@@ -1,32 +1,35 @@
-import React, { useState } from "react";
-import { InputText } from "primereact/inputtext";
-import { Button } from "primereact/button";
-import { Calendar } from "primereact/calendar";
-import { Password } from "primereact/password";
-import { Checkbox } from "primereact/checkbox";
-import { Dropdown } from "primereact/dropdown";
+import React, { useState } from 'react';
+import { InputText } from 'primereact/inputtext';
+import { Button } from 'primereact/button';
+import { Calendar } from 'primereact/calendar';
+import { Password } from 'primereact/password';
+import { Checkbox } from 'primereact/checkbox';
+import { Dropdown } from 'primereact/dropdown';
 
-import "../UserGeneral.css";
+import { useUserHook } from '../hooks/user.hooks';
+
+import '../UserGeneral.css';
 export const FormRegister = () => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [birthDate, setBirthDate] = useState(new Date());
+    const { onSubmitRegister } = useUserHook();
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [dateBirth, setDateBirth] = useState(new Date());
     const [subscriptionOptions] = useState([
         {
-            label: "Try Free 1 month",
-            value: "try",
+            label: 'Try Free 1 month',
+            value: 'try',
         },
         {
-            label: "6 Months",
-            value: "6m",
+            label: '6 Months',
+            value: '6m',
         },
         {
-            label: "1 Year",
-            value: "1y",
+            label: '1 Year',
+            value: '1y',
         },
     ]);
-    const [subscription, setSubscription] = useState("");
+    const [subscription, setSubscription] = useState('');
     const [accept, setAccept] = useState();
 
     return (
@@ -70,10 +73,10 @@ export const FormRegister = () => {
                 <div className="field mt-4">
                     <span className="p-float-label w-full">
                         <Calendar
-                            id="birthDate"
+                            id="dateBirth"
                             className="w-full"
-                            value={birthDate}
-                            onChange={(e) => setBirthDate(e.target.value)}
+                            value={dateBirth}
+                            onChange={(e) => setDateBirth(e.target.value)}
                             dateFormat="dd/mm/yy"
                             mask="99/99/9999"
                             showIcon
@@ -90,24 +93,19 @@ export const FormRegister = () => {
                             onChange={(e) => setSubscription(e.value)}
                             options={subscriptionOptions}
                         />
-                        <label htmlFor="subscription">
-                            Select Subscription Plan
-                        </label>
+                        <label htmlFor="subscription">Select Subscription Plan</label>
                     </span>
                 </div>
                 <div className="field-checkbox mt-2">
-                    <Checkbox
-                        inputId="accept"
-                        name="accept"
-                        checked={accept}
-                        onChange={(e) => setAccept(e.checked)}
-                    />
-                    <label htmlFor="accept">
-                        I agree to the terms and conditions*
-                    </label>
+                    <Checkbox inputId="accept" name="accept" checked={accept} onChange={(e) => setAccept(e.checked)} />
+                    <label htmlFor="accept">I agree to the terms and conditions*</label>
                 </div>
                 <div className="field flex justify-content-center">
-                    <Button label="Submit" className="mt-2" />
+                    <Button
+                        label="Submit"
+                        className="mt-2"
+                        onClick={() => onSubmitRegister(name, email, password, dateBirth, subscription)}
+                    />
                 </div>
             </div>
         </div>
