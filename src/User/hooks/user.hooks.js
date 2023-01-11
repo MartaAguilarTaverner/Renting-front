@@ -14,7 +14,7 @@ export const useUserHook = () => {
     const navigate = useNavigate();
 
     const onSubmitLogin = async (email, password) => {
-        if (checkIfDataIsValid(email, password)) {
+        if (!checkIfDataIsValid(email, password)) {
             alert('The email or password is not correct');
 
             return;

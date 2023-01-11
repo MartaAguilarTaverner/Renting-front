@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useCallback, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
-import TableCardMedia from "../components/TableCardMedia/TableCardMedia";
+import TableCardMedia from '../components/TableCardMedia/TableCardMedia';
 
-import { getTopSeries } from "./services/serie.service";
+import { getTopSeries } from './services/serie.service';
 
 const TopSerie = () => {
     const token = useSelector((state) => state.user.token);
@@ -19,11 +19,7 @@ const TopSerie = () => {
         getAllTopSeries();
     }, [getAllTopSeries]);
 
-    return (
-        <div>
-            <TableCardMedia mediaList={serieList} />
-        </div>
-    );
+    return <TableCardMedia mediaList={serieList} type="series" />;
 };
 
 export default TopSerie;

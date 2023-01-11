@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useCallback, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
-import TableCardMedia from "../components/TableCardMedia/TableCardMedia";
+import TableCardMedia from '../components/TableCardMedia/TableCardMedia';
 
-import { getTopMovies } from "./services/movie.service";
+import { getTopMovies } from './services/movie.service';
 
 const TopMovie = () => {
     const token = useSelector((state) => state.user.token);
@@ -19,11 +19,7 @@ const TopMovie = () => {
         getAllTopMovies();
     }, [getAllTopMovies]);
 
-    return (
-        <div>
-            <TableCardMedia mediaList={movieList} />
-        </div>
-    );
+    return <TableCardMedia mediaList={movieList} type="movies" />;
 };
 
 export default TopMovie;
