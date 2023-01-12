@@ -35,7 +35,7 @@ export const useUserHook = () => {
     };
 
     const onSubmitRegister = async (name, email, password, dateBirth, subscription) => {
-        if (!checkIfRegisterDataIsValid(name, email, password, dateBirth, subscription)) {
+        if (checkIfRegisterDataIsValid(name, email, password, dateBirth, subscription)) {
             alert('Something went wrong while trying to register with this data');
 
             return;

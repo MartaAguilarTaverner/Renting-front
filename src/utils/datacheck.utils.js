@@ -17,9 +17,13 @@ export const checkIfRegisterDataIsValid = (name, email, password, birthDate, sub
     let hasErrors = false;
 
     hasErrors = checkIfNameIsValid(name);
+
     hasErrors = checkEmailRegexp(email);
+
     hasErrors = !password;
+
     hasErrors = !(birthDate instanceof Date);
+
     hasErrors = !subscription;
 
     return hasErrors;

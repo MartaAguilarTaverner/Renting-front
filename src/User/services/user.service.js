@@ -7,7 +7,7 @@ export const doLogin = ({ email, password }) =>
     });
 
 export const doRegister = ({ name, email, password, dateBirth, subscription }) =>
-    axios.post('http://localhost:3001/user/register', {
+    axios.post('http://localhost:3001/user', {
         name,
         email,
         password,
